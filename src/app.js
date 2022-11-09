@@ -2,7 +2,7 @@ if (process.env.USER) require("dotenv").config();
 const express = require("express");
 // create the express instance, store it in the app variable
 const app = express();
-const cors = require(cors)
+const cors = require("cors")
 // route handlers
 const moviesRouter = require("./movies/movies.router");
 const theatersRouter = require("./theaters/theaters.router");
