@@ -21,6 +21,8 @@ router.get("/", cors(), (req, res) => {
     res.json({ message: "Welcome! You can access the data using these routes: /movies, /movies/:moviesId, /reviews, /reviews/:reviewId, /theaters, /movies/:movieId/reviews, /movies/:movieId/reviews/:reviewId" })
 })
 
+app.use("/", router)
+
 // define each route: movies, movie-theaters, reviews
 app.use("/movies", moviesRouter);
 app.use("/reviews", reviewsRouter)

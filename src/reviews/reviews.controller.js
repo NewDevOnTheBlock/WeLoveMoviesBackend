@@ -9,7 +9,7 @@ async function reviewExists(req, res, next) {
     const { reviewId } = req.params;
     const review = await reviewsService.read(reviewId);
     if (review) {
-        res.locals.reviewId = reviewId
+        res.locals.reviewId = reviewId;
         res.locals.review = review;
         return next();
     }
@@ -32,6 +32,7 @@ async function update(req, res, next) {
     const updatedReview = {
         ...res.locals.review,
         ...req.body.data,
+        updated_at: Date.now().toString(),
     }
     await reviewsService.update(updatedReview)
     updatedReview["critic"] = critic
