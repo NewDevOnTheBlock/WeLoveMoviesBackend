@@ -6,7 +6,7 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary")
 // list all theaters
 async function list(req, res, next) {
     const data = await theatersService.list()
-    res.send({ data })
+    res.json({ data })
 }
 
 module.exports = {

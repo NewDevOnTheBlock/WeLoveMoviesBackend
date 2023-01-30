@@ -5,10 +5,7 @@ const reviewsRouter = require("../reviews/reviews.router")
 const theatersRouter = require("../theaters/theaters.router")
 //methodNotAllowed
 const methodNotAllowed = require("../errors/methodNotAllowed")
-// import cors
-const cors = require("cors");
 // define routes to endpoints
-// app.use(cors())
 // check theaters of a specific movie
 router.use("/:movieId/theaters", controller.movieExists, theatersRouter)
 // check the reviews of a specific movie
